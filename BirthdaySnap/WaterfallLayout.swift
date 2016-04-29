@@ -8,10 +8,16 @@
 
 import UIKit
 
+/**
+    Asks the delegate for the height of the image
+ */
 protocol WaterfallLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth: CGFloat) -> CGFloat
 }
 
+/** 
+    Waterfall layout attributes for caching.
+ */
 class WaterfallLayoutAttributes: UICollectionViewLayoutAttributes {
     
     var photoHeight: CGFloat = 0.0

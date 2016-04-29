@@ -27,3 +27,9 @@ let kSCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
  */
 let kPHOTO_CELL_PADDING = CGFloat(1.0)
 let kPHOTO_WIDTH = kSCREEN_WIDTH / 2.0 - kPHOTO_CELL_PADDING * 2.0
+
+/**
+    Autolayout constants
+ */
+let kNAV_BAR_PORTRAIT_HEIGHT = CGFloat(64.0)
+let kNAV_BAR_LANDSCAPE_HEIGHT = CGFloat(44.0)
