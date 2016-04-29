@@ -18,6 +18,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     private func setupImageView() {
         self.imageView = UIImageView(frame: CGRectZero)
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.imageView.contentMode = .ScaleAspectFill
         self.addSubview(self.imageView)
         
         // Autolayout image view

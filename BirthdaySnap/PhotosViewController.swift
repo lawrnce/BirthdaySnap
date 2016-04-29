@@ -38,6 +38,17 @@ class PhotosViewController: UIViewController {
     }
     
     /**
+        MARK: - Data
+     */
+    
+    /**
+        Pull to refresh for the collection view.
+     */
+    func refreshCollectionView(refreshControl: UIRefreshControl) {
+        refreshControl.endRefreshing()
+    }
+    
+    /**
         MARK: - Setup
      */
     
@@ -66,6 +77,7 @@ class PhotosViewController: UIViewController {
         The collection view were we preview photos.
      */
     private func setupCollectionView() {
+
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.delegate = self
@@ -73,8 +85,15 @@ class PhotosViewController: UIViewController {
         self.collectionView.backgroundColor = UIColor.whiteColor()
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.showsVerticalScrollIndicator = false
+        self.collectionView.bounces = true
+        self.collectionView.alwaysBounceVertical = true
         self.collectionView.registerClass(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: kPhotosCellReuseIdentifier)
         self.view.addSubview(self.collectionView)
+        
+        // add a refresh control
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refreshCollectionView:", forControlEvents: .ValueChanged)
+        self.collectionView.addSubview(refreshControl)
     }
     
     /**
@@ -133,7 +152,7 @@ extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard self.photosURL != nil else {
-            return 40
+            return 15
         }
         return self.photosURL.count
     }
