@@ -47,6 +47,7 @@ class Flickr {
         Parses the raw JSON from Flickr API into an array of URLs.
     
         - Parameter data: JSON output from a Flickr API call.
+        - Returns: An array of photo urls.
      */
     func parseData(data: JSON) -> [NSURL] {
         var urls = [NSURL]()
@@ -60,6 +61,7 @@ class Flickr {
         Helper method to parse raw photo data into a url.
      
         - Parameter photo: The data for a single flickr photo to be parses into a url.
+        - Returns: A url of a flickr photo.
      */
     private func flickrImageURL(photo: JSON) -> NSURL {
         return NSURL(string: "http://farm\(photo["farm"]).staticflickr.com/\(photo["server"])/\(photo["id"])_\(photo["secret"])_m.jpg")!
