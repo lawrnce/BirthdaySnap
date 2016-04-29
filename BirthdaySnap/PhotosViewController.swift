@@ -57,9 +57,9 @@ class PhotosViewController: UIViewController {
      */
     private func setupFlowLayout() {
         self.flowLayout = UICollectionViewFlowLayout()
-        self.flowLayout.minimumInteritemSpacing = 0.0
-        self.flowLayout.minimumLineSpacing = 0.0
-        self.flowLayout.itemSize = kPHOTO_ITEM_SIZE
+        self.flowLayout.minimumInteritemSpacing = kPHOTO_CELL_SPACING
+        self.flowLayout.minimumLineSpacing = kPHOTO_LINE_SPACING
+        self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
     }
     
     /**
@@ -69,6 +69,11 @@ class PhotosViewController: UIViewController {
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.backgroundColor = UIColor.whiteColor()
+        self.collectionView.showsHorizontalScrollIndicator = false
+        self.collectionView.showsVerticalScrollIndicator = false
+        self.collectionView.registerClass(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: kPhotosCellReuseIdentifier)
         self.view.addSubview(self.collectionView)
     }
     
@@ -105,8 +110,10 @@ class PhotosViewController: UIViewController {
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         if (toInterfaceOrientation == .Portrait || toInterfaceOrientation == .PortraitUpsideDown) {
             self.navigationBarHeightConstraint.constant = kNAV_BAR_PORTRAIT_HEIGHT
+            self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
         } else {
             self.navigationBarHeightConstraint.constant = kNAV_BAR_LANDSCAPE_HEIGHT
+            self.flowLayout.itemSize = kPHOTO_LANDSCAPE_ITEM_SIZE
         }
     }
     
@@ -126,15 +133,18 @@ extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard self.photosURL != nil else {
-            return 0
+            return 40
         }
         return self.photosURL.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kPhotosCellReuseIdentifier, forIndexPath: indexPath) as! PhotosCollectionViewCell
         
-        return UICollectionViewCell()
+        cell.backgroundColor = UIColor.cyanColor()
+        
+        return cell
     }
 }
 

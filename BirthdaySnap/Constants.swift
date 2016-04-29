@@ -25,7 +25,17 @@ let kSCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
 /**
     Collection view ui constants
  */
-let kPHOTO_ITEM_SIZE = CGSize(width: kSCREEN_WIDTH / 2.0, height: kSCREEN_WIDTH / 2.0)
+let kPHOTOS_PER_ROW_PORTRAIT = 3
+let kPHOTOS_PER_ROW_LANDSCAPE = 4
+let kPHOTO_CELL_SPACING = CGFloat(1.0)
+let kPHOTO_LINE_SPACING = kPHOTO_CELL_SPACING * 2.0
+let kPHOTO_PORTRAIT_ITEM_SIZE = CGSize(width: kSCREEN_WIDTH / 3.0 - kPHOTO_CELL_SPACING, height: kSCREEN_WIDTH / 3.0 - kPHOTO_CELL_SPACING)
+let kPHOTO_LANDSCAPE_ITEM_SIZE = CGSize(width: kSCREEN_HEIGHT / 4.0 - kPHOTO_CELL_SPACING, height: kSCREEN_HEIGHT / 4.0 - kPHOTO_CELL_SPACING)
+
+/** 
+    Photos cell constants
+ */
+let kPhotosCellReuseIdentifier = "com.lawrnce.PhotosCellReuseIdentifier"
 
 /**
     Autolayout constants
