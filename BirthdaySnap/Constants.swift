@@ -25,4 +25,5 @@ let kSCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
 /**
     Collection view ui constants
  */
-let kPHOTO_CELL_WIDTH = kSCREEN_WIDTH / 2.0
+let kPHOTO_CELL_PADDING = CGFloat(1.0)
+let kPHOTO_WIDTH = kSCREEN_WIDTH / 2.0 - kPHOTO_CELL_PADDING * 2.0

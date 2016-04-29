@@ -12,6 +12,7 @@
 		E60DCFBF1CD316C800A28201 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60DCFBE1CD316C800A28201 /* Flickr.swift */; };
 		E6184BBE1CD327FB00ECB8E1 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6184BBD1CD327FB00ECB8E1 /* PhotosCollectionViewController.swift */; };
 		E6184BC01CD3284000ECB8E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6184BBF1CD3284000ECB8E1 /* Constants.swift */; };
+		E6184BC21CD3296F00ECB8E1 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6184BC11CD3296F00ECB8E1 /* WaterfallLayout.swift */; };
 		E6833C39140ACC9E2A991CE8 /* Pods_BirthdaySnap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */; };
 		E683DFC51CD3143F00835FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC41CD3143F00835FFC /* AppDelegate.swift */; };
 		E683DFC71CD3143F00835FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC61CD3143F00835FFC /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		E60DCFBE1CD316C800A28201 /* Flickr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 		E6184BBD1CD327FB00ECB8E1 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		E6184BBF1CD3284000ECB8E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E6184BC11CD3296F00ECB8E1 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		E683DFC11CD3143F00835FFC /* BirthdaySnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdaySnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E683DFC41CD3143F00835FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E683DFC61CD3143F00835FFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +139,9 @@
 			children = (
 				E6184BBF1CD3284000ECB8E1 /* Constants.swift */,
 				E683DFC41CD3143F00835FFC /* AppDelegate.swift */,
-				E683DFC61CD3143F00835FFC /* ViewController.swift */,
 				E6184BBD1CD327FB00ECB8E1 /* PhotosCollectionViewController.swift */,
+				E6184BC11CD3296F00ECB8E1 /* WaterfallLayout.swift */,
+				E683DFC61CD3143F00835FFC /* ViewController.swift */,
 				E60DCFBE1CD316C800A28201 /* Flickr.swift */,
 				E683DFC81CD3143F00835FFC /* Main.storyboard */,
 				E683DFCB1CD3143F00835FFC /* Assets.xcassets */,
@@ -443,6 +446,7 @@
 				E683DFC71CD3143F00835FFC /* ViewController.swift in Sources */,
 				E60DCFBF1CD316C800A28201 /* Flickr.swift in Sources */,
 				E683DFC51CD3143F00835FFC /* AppDelegate.swift in Sources */,
+				E6184BC21CD3296F00ECB8E1 /* WaterfallLayout.swift in Sources */,
 				E6184BBE1CD327FB00ECB8E1 /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
