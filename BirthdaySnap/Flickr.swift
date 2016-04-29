@@ -10,10 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-let API_ENDPOINT = "https://api.flickr.com/services/rest/"
-let apiKey = "01351a08b752df306279c93cdea62aba"
-let apiSecret = "4f1469c14f2cf902"
-
 class Flickr {
     
     /**
