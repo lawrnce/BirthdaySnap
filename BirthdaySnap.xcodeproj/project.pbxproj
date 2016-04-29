@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E25E4A8A6AAB460BDD840CD /* Pods_BirthdaySnapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF541E2F794D788CFEF6C102 /* Pods_BirthdaySnapTests.framework */; };
+		E6833C39140ACC9E2A991CE8 /* Pods_BirthdaySnap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */; };
 		E683DFC51CD3143F00835FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC41CD3143F00835FFC /* AppDelegate.swift */; };
 		E683DFC71CD3143F00835FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC61CD3143F00835FFC /* ViewController.swift */; };
 		E683DFCA1CD3143F00835FFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E683DFC81CD3143F00835FFC /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		E683DFCF1CD3143F00835FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E683DFCD1CD3143F00835FFC /* LaunchScreen.storyboard */; };
 		E683DFDA1CD3143F00835FFC /* BirthdaySnapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFD91CD3143F00835FFC /* BirthdaySnapTests.swift */; };
 		E683DFE51CD3143F00835FFC /* BirthdaySnapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFE41CD3143F00835FFC /* BirthdaySnapUITests.swift */; };
+		FF152A0B1052E281FCE59362 /* Pods_BirthdaySnapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175B632FF8C21BEEA9F06C2D /* Pods_BirthdaySnapUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		175B632FF8C21BEEA9F06C2D /* Pods_BirthdaySnapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirthdaySnapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4593C76A915DB7F526CAAA58 /* Pods-BirthdaySnapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnapTests/Pods-BirthdaySnapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DD450A103AD01B1837C9BAF /* Pods-BirthdaySnapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnapUITests/Pods-BirthdaySnapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		70577977A7CDA81C89F1BD59 /* Pods-BirthdaySnapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnapTests/Pods-BirthdaySnapTests.release.xcconfig"; sourceTree = "<group>"; };
+		95415916F31A68C06E874C81 /* Pods-BirthdaySnap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnap.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnap/Pods-BirthdaySnap.release.xcconfig"; sourceTree = "<group>"; };
+		95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirthdaySnap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F8E7711F2256A928A894B1 /* Pods-BirthdaySnapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnapUITests/Pods-BirthdaySnapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF541E2F794D788CFEF6C102 /* Pods_BirthdaySnapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirthdaySnapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3B775DA6C23F3454634B1DA /* Pods-BirthdaySnap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnap/Pods-BirthdaySnap.debug.xcconfig"; sourceTree = "<group>"; };
 		E683DFC11CD3143F00835FFC /* BirthdaySnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdaySnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E683DFC41CD3143F00835FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E683DFC61CD3143F00835FFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6833C39140ACC9E2A991CE8 /* Pods_BirthdaySnap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E25E4A8A6AAB460BDD840CD /* Pods_BirthdaySnapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF152A0B1052E281FCE59362 /* Pods_BirthdaySnapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36551AFFEFD131CD45330047 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3B775DA6C23F3454634B1DA /* Pods-BirthdaySnap.debug.xcconfig */,
+				95415916F31A68C06E874C81 /* Pods-BirthdaySnap.release.xcconfig */,
+				4593C76A915DB7F526CAAA58 /* Pods-BirthdaySnapTests.debug.xcconfig */,
+				70577977A7CDA81C89F1BD59 /* Pods-BirthdaySnapTests.release.xcconfig */,
+				A3F8E7711F2256A928A894B1 /* Pods-BirthdaySnapUITests.debug.xcconfig */,
+				4DD450A103AD01B1837C9BAF /* Pods-BirthdaySnapUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E683DFB81CD3143F00835FFC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				E683DFD81CD3143F00835FFC /* BirthdaySnapTests */,
 				E683DFE31CD3143F00835FFC /* BirthdaySnapUITests */,
 				E683DFC21CD3143F00835FFC /* Products */,
+				36551AFFEFD131CD45330047 /* Pods */,
+				F0AFBDA7CDBE346D2BF77B52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +155,16 @@
 			path = BirthdaySnapUITests;
 			sourceTree = "<group>";
 		};
+		F0AFBDA7CDBE346D2BF77B52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */,
+				DF541E2F794D788CFEF6C102 /* Pods_BirthdaySnapTests.framework */,
+				175B632FF8C21BEEA9F06C2D /* Pods_BirthdaySnapUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E683DFE91CD3143F00835FFC /* Build configuration list for PBXNativeTarget "BirthdaySnap" */;
 			buildPhases = (
+				7F80BC33514664C681EA2C72 /* Check Pods Manifest.lock */,
 				E683DFBD1CD3143F00835FFC /* Sources */,
 				E683DFBE1CD3143F00835FFC /* Frameworks */,
 				E683DFBF1CD3143F00835FFC /* Resources */,
+				331540994F3D9496D94B76DB /* Embed Pods Frameworks */,
+				C083DA546061DC59AE98BB1B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E683DFEC1CD3143F00835FFC /* Build configuration list for PBXNativeTarget "BirthdaySnapTests" */;
 			buildPhases = (
+				13F80E05414D4F8C6293D909 /* Check Pods Manifest.lock */,
 				E683DFD11CD3143F00835FFC /* Sources */,
 				E683DFD21CD3143F00835FFC /* Frameworks */,
 				E683DFD31CD3143F00835FFC /* Resources */,
+				FB06D6D82D69FDF9AD74BFC6 /* Embed Pods Frameworks */,
+				E5BB42CC672F2ACBB25A5648 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E683DFEF1CD3143F00835FFC /* Build configuration list for PBXNativeTarget "BirthdaySnapUITests" */;
 			buildPhases = (
+				7E2BC1E2FE19D56B7BDE8AF1 /* Check Pods Manifest.lock */,
 				E683DFDC1CD3143F00835FFC /* Sources */,
 				E683DFDD1CD3143F00835FFC /* Frameworks */,
 				E683DFDE1CD3143F00835FFC /* Resources */,
+				7E9170B5CF91F832B10B3DBE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +298,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13F80E05414D4F8C6293D909 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		331540994F3D9496D94B76DB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirthdaySnap/Pods-BirthdaySnap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E2BC1E2FE19D56B7BDE8AF1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E9170B5CF91F832B10B3DBE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirthdaySnapUITests/Pods-BirthdaySnapUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F80BC33514664C681EA2C72 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C083DA546061DC59AE98BB1B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirthdaySnap/Pods-BirthdaySnap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5BB42CC672F2ACBB25A5648 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirthdaySnapTests/Pods-BirthdaySnapTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB06D6D82D69FDF9AD74BFC6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirthdaySnapTests/Pods-BirthdaySnapTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E683DFBD1CD3143F00835FFC /* Sources */ = {
@@ -397,8 +568,10 @@
 		};
 		E683DFEA1CD3143F00835FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3B775DA6C23F3454634B1DA /* Pods-BirthdaySnap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = BirthdaySnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lawrnce.BirthdaySnap;
@@ -408,8 +581,10 @@
 		};
 		E683DFEB1CD3143F00835FFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95415916F31A68C06E874C81 /* Pods-BirthdaySnap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = BirthdaySnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lawrnce.BirthdaySnap;
@@ -419,6 +594,7 @@
 		};
 		E683DFED1CD3143F00835FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4593C76A915DB7F526CAAA58 /* Pods-BirthdaySnapTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BirthdaySnapTests/Info.plist;
@@ -431,6 +607,7 @@
 		};
 		E683DFEE1CD3143F00835FFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70577977A7CDA81C89F1BD59 /* Pods-BirthdaySnapTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BirthdaySnapTests/Info.plist;
@@ -443,6 +620,7 @@
 		};
 		E683DFF01CD3143F00835FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F8E7711F2256A928A894B1 /* Pods-BirthdaySnapUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = BirthdaySnapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -455,6 +633,7 @@
 		};
 		E683DFF11CD3143F00835FFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD450A103AD01B1837C9BAF /* Pods-BirthdaySnapUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = BirthdaySnapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +663,7 @@
 				E683DFEB1CD3143F00835FFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E683DFEC1CD3143F00835FFC /* Build configuration list for PBXNativeTarget "BirthdaySnapTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +672,7 @@
 				E683DFEE1CD3143F00835FFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E683DFEF1CD3143F00835FFC /* Build configuration list for PBXNativeTarget "BirthdaySnapUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +681,7 @@
 				E683DFF11CD3143F00835FFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

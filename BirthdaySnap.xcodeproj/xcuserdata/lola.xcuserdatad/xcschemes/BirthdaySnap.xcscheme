@@ -48,6 +48,16 @@
                ReferencedContainer = "container:BirthdaySnap.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E683DFF51CD3145E00835FFC"
+               BuildableName = "FlickrTests.xctest"
+               BlueprintName = "FlickrTests"
+               ReferencedContainer = "container:BirthdaySnap.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
