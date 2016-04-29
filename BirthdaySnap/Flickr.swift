@@ -60,6 +60,6 @@ class Flickr {
         - Returns: A url of a flickr photo.
      */
     private func flickrImageURL(photo: JSON) -> NSURL {
-        return NSURL(string: "http://farm\(photo["farm"]).staticflickr.com/\(photo["server"])/\(photo["id"])_\(photo["secret"])_m.jpg")!
+        return NSURL(string: "http://farm\(photo["farm"]).staticflickr.com/\(photo["server"])/\(photo["id"])_\(photo["secret"]).jpg")!
     }
 }

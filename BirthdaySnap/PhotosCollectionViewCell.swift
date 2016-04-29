@@ -16,18 +16,20 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         Setup the image view in the cell's frame.
      */
     private func setupImageView() {
-        self.imageView = UIImageView(frame: CGRectZero)
+        self.imageView = UIImageView(frame: self.bounds)
+        self.clipsToBounds = true
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
         self.imageView.contentMode = .ScaleAspectFill
-        self.addSubview(self.imageView)
+        self.contentMode = .ScaleAspectFill
+        self.contentView.addSubview(self.imageView)
         
         // Autolayout image view
-        let topLayout = NSLayoutConstraint(item: self.imageView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let bottomLayout = NSLayoutConstraint(item: self.imageView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-        let leadingLayout = NSLayoutConstraint(item: self.imageView, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-        let trailingLayout = NSLayoutConstraint(item: self.imageView, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
+        let topLayout = NSLayoutConstraint(item: self.imageView, attribute: .Top, relatedBy: .Equal, toItem: self.contentView, attribute: .Top, multiplier: 1.0, constant: 0.0)
+        let bottomLayout = NSLayoutConstraint(item: self.imageView, attribute: .Bottom, relatedBy: .Equal, toItem: self.contentView, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        let leadingLayout = NSLayoutConstraint(item: self.imageView, attribute: .Leading, relatedBy: .Equal, toItem: self.contentView, attribute: .Leading, multiplier: 1.0, constant: 0.0)
+        let trailingLayout = NSLayoutConstraint(item: self.imageView, attribute: .Trailing, relatedBy: .Equal, toItem: self.contentView, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
         
-        self.addConstraints([topLayout, bottomLayout, leadingLayout, trailingLayout])
+        self.contentView.addConstraints([topLayout, bottomLayout, leadingLayout, trailingLayout])
     }
     
     override init(frame: CGRect) {

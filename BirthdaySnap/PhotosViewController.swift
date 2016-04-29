@@ -11,6 +11,9 @@ import Haneke
 
 class PhotosViewController: UIViewController {
     
+    // Flickr API
+    var flickr = Flickr()
+    
     // Array of URLS of Flickr photos
     var photosURL: [NSURL]!
     
@@ -39,6 +42,7 @@ class PhotosViewController: UIViewController {
         super.viewWillAppear(animated)
         layoutNavigationBar()
         layoutCollectionView()
+        getBirthdayImagesForPage(1, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,11 +54,68 @@ class PhotosViewController: UIViewController {
      */
     
     /**
+        Fetch data from Flikr API. If first page then create new 
+        data model. If not first page, add new page to current model.
+        If there's any error then notify the user.
+     
+        - Parameter page: The page to be fetched.
+        - Parameter completion: The block to be executed after fetching data.
+     */
+    private func getBirthdayImagesForPage(page: Int, completion:(() -> Void)?) {
+        if (page == 1) {
+            self.photosURL = nil
+            self.photosURL = [NSURL]()
+            self.totalPages = 0
+        }
+        
+        self.flickr.searchBirthdayPhotos(page) { (json, error) -> Void in
+            
+            // Success
+            if (error == nil) {
+                // Increment page
+                self.totalPages = self.totalPages + 1
+                
+                // Append to model
+                self.photosURL! += self.flickr.parseData(json!)
+                
+                // Reload collection view
+                self.collectionView.reloadData()
+                
+
+                
+            // Network Error
+            } else {
+
+            }
+            
+            if completion != nil {
+                completion!()
+            }
+        }
+    }
+    
+    /**
+        Fetch data for next page.
+     */
+    private func getNextPage() {
+        getBirthdayImagesForPage(self.totalPages + 1, completion: nil)
+    }
+     
+    /**
         Pull to refresh for the collection view.
+     
+        - Parameter refreshControl: The refresh control from the collection view.
      */
     func refreshCollectionView(refreshControl: UIRefreshControl) {
-        refreshControl.endRefreshing()
+        getBirthdayImagesForPage(1) { (error) -> Void in
+           refreshControl.endRefreshing()
+        }
     }
+    
+    /**
+        MARK: - User Notifications
+     */
+    
     
     /**
         MARK: - Setup
@@ -160,7 +221,7 @@ extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard self.photosURL != nil else {
-            return 15
+            return 0
         }
         return self.photosURL.count
     }
@@ -170,11 +231,9 @@ extension PhotosViewController: UICollectionViewDataSource {
         Catch the photos when fetched.
      */
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kPhotosCellReuseIdentifier, forIndexPath: indexPath) as! PhotosCollectionViewCell
-        
-        cell.backgroundColor = UIColor.cyanColor()
-        
+        // Use Haneke to fetch the photo and catch it
+        cell.imageView.hnk_setImageFromURL(self.photosURL[indexPath.row])
         return cell
     }
 }
