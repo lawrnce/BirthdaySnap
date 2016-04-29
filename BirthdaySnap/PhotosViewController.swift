@@ -13,7 +13,7 @@ class PhotosViewController: UIViewController {
 
     var navigationBar: UINavigationBar!
     var collectionView: UICollectionView!
-    var layout: UICollectionViewFlowLayout!
+    var flowLayout: UICollectionViewFlowLayout!
     
     var photosURL: [NSURL]!
     
@@ -23,6 +23,7 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        setupFlowLayout()
         setupCollectionView()
     }
 
@@ -52,11 +53,20 @@ class PhotosViewController: UIViewController {
     }
     
     /**
+        Setup the flow layout.
+     */
+    private func setupFlowLayout() {
+        self.flowLayout = UICollectionViewFlowLayout()
+        self.flowLayout.minimumInteritemSpacing = 0.0
+        self.flowLayout.minimumLineSpacing = 0.0
+        self.flowLayout.itemSize = kPHOTO_ITEM_SIZE
+    }
+    
+    /**
         The collection view were we preview photos.
      */
     private func setupCollectionView() {
-        self.layout = UICollectionViewFlowLayout()
-        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
+        self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.delegate = self
         self.view.addSubview(self.collectionView)
@@ -122,6 +132,8 @@ extension PhotosViewController: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        
         return UICollectionViewCell()
     }
 }
