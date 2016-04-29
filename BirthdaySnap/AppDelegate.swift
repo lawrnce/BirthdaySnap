@@ -19,11 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Test API
         let flickr = Flickr()
         flickr.searchBirthdayPhotos(2) { (json, error) -> Void in
-            
             print(json)
-            
-//            let urls = flickr.parseData(json!)
-//            print(urls)
         }
         
         return true

@@ -10,12 +10,20 @@ import UIKit
 import Haneke
 
 class PhotosViewController: UIViewController {
-
+    
+    // Array of URLS of Flickr photos
+    var photosURL: [NSURL]!
+    
+    // The total number of pages of photos
+    var totalPages: Int!
+    
+    // The image cache to store the photos
+    var cache: Cache<UIImage>!
+    
+    // Subview elements
     var navigationBar: UINavigationBar!
     var collectionView: UICollectionView!
     var flowLayout: UICollectionViewFlowLayout!
-    
-    var photosURL: [NSURL]!
     
     // Auto layout variables
     private var navigationBarHeightConstraint: NSLayoutConstraint!
@@ -77,7 +85,6 @@ class PhotosViewController: UIViewController {
         The collection view were we preview photos.
      */
     private func setupCollectionView() {
-
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.delegate = self
@@ -158,6 +165,10 @@ extension PhotosViewController: UICollectionViewDataSource {
         return self.photosURL.count
     }
     
+    /**
+        Fetch the photo for index path and add it to the cell's image view. 
+        Catch the photos when fetched.
+     */
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kPhotosCellReuseIdentifier, forIndexPath: indexPath) as! PhotosCollectionViewCell
@@ -170,4 +181,7 @@ extension PhotosViewController: UICollectionViewDataSource {
 
 extension PhotosViewController: UICollectionViewDelegate {
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 }
