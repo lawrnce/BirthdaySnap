@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E25E4A8A6AAB460BDD840CD /* Pods_BirthdaySnapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF541E2F794D788CFEF6C102 /* Pods_BirthdaySnapTests.framework */; };
+		E60DCFBD1CD3163E00A28201 /* FlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60DCFBC1CD3163E00A28201 /* FlickrTests.swift */; };
+		E60DCFBF1CD316C800A28201 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60DCFBE1CD316C800A28201 /* Flickr.swift */; };
 		E6833C39140ACC9E2A991CE8 /* Pods_BirthdaySnap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */; };
 		E683DFC51CD3143F00835FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC41CD3143F00835FFC /* AppDelegate.swift */; };
 		E683DFC71CD3143F00835FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC61CD3143F00835FFC /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		A3F8E7711F2256A928A894B1 /* Pods-BirthdaySnapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnapUITests/Pods-BirthdaySnapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF541E2F794D788CFEF6C102 /* Pods_BirthdaySnapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirthdaySnapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B775DA6C23F3454634B1DA /* Pods-BirthdaySnap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdaySnap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BirthdaySnap/Pods-BirthdaySnap.debug.xcconfig"; sourceTree = "<group>"; };
+		E60DCFBC1CD3163E00A28201 /* FlickrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrTests.swift; sourceTree = "<group>"; };
+		E60DCFBE1CD316C800A28201 /* Flickr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 		E683DFC11CD3143F00835FFC /* BirthdaySnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdaySnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E683DFC41CD3143F00835FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E683DFC61CD3143F00835FFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				E683DFC41CD3143F00835FFC /* AppDelegate.swift */,
 				E683DFC61CD3143F00835FFC /* ViewController.swift */,
+				E60DCFBE1CD316C800A28201 /* Flickr.swift */,
 				E683DFC81CD3143F00835FFC /* Main.storyboard */,
 				E683DFCB1CD3143F00835FFC /* Assets.xcassets */,
 				E683DFCD1CD3143F00835FFC /* LaunchScreen.storyboard */,
@@ -140,6 +145,7 @@
 		E683DFD81CD3143F00835FFC /* BirthdaySnapTests */ = {
 			isa = PBXGroup;
 			children = (
+				E60DCFBC1CD3163E00A28201 /* FlickrTests.swift */,
 				E683DFD91CD3143F00835FFC /* BirthdaySnapTests.swift */,
 				E683DFDB1CD3143F00835FFC /* Info.plist */,
 			);
@@ -428,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E683DFC71CD3143F00835FFC /* ViewController.swift in Sources */,
+				E60DCFBF1CD316C800A28201 /* Flickr.swift in Sources */,
 				E683DFC51CD3143F00835FFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60DCFBD1CD3163E00A28201 /* FlickrTests.swift in Sources */,
 				E683DFDA1CD3143F00835FFC /* BirthdaySnapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,6 @@
+framework module Pods_BirthdaySnapTests {
+  umbrella header "Pods-BirthdaySnapTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

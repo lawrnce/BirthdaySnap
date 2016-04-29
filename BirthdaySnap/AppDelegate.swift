@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Test API
+        let flickr = Flickr()
+        flickr.searchBirthdayPhotos { (json, error) -> Void in
+            print(json)
+        }
+        
         return true
     }
 
