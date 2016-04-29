@@ -92,6 +92,7 @@ class PhotosViewController: UIViewController {
         
         // add a refresh control
         let refreshControl = UIRefreshControl()
+        refreshControl.layer.zPosition = -1
         refreshControl.addTarget(self, action: "refreshCollectionView:", forControlEvents: .ValueChanged)
         self.collectionView.addSubview(refreshControl)
     }
