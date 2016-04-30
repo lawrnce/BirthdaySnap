@@ -15,7 +15,6 @@
 		E655B0131CD4073700670740 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E655B0121CD4073700670740 /* PhotosCollectionViewCell.swift */; };
 		E6833C39140ACC9E2A991CE8 /* Pods_BirthdaySnap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */; };
 		E683DFC51CD3143F00835FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFC41CD3143F00835FFC /* AppDelegate.swift */; };
-		E683DFCA1CD3143F00835FFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E683DFC81CD3143F00835FFC /* Main.storyboard */; };
 		E683DFCC1CD3143F00835FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E683DFCB1CD3143F00835FFC /* Assets.xcassets */; };
 		E683DFCF1CD3143F00835FFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E683DFCD1CD3143F00835FFC /* LaunchScreen.storyboard */; };
 		E683DFDA1CD3143F00835FFC /* BirthdaySnapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683DFD91CD3143F00835FFC /* BirthdaySnapTests.swift */; };
@@ -57,7 +56,6 @@
 		E655B0121CD4073700670740 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		E683DFC11CD3143F00835FFC /* BirthdaySnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdaySnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E683DFC41CD3143F00835FFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E683DFC91CD3143F00835FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E683DFCB1CD3143F00835FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E683DFCE1CD3143F00835FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E683DFD01CD3143F00835FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				E655B0101CD3FAF600670740 /* PhotosViewController.swift */,
 				E655B0121CD4073700670740 /* PhotosCollectionViewCell.swift */,
 				E60DCFBE1CD316C800A28201 /* Flickr.swift */,
-				E683DFC81CD3143F00835FFC /* Main.storyboard */,
 				E683DFCB1CD3143F00835FFC /* Assets.xcassets */,
 				E683DFCD1CD3143F00835FFC /* LaunchScreen.storyboard */,
 				E683DFD01CD3143F00835FFC /* Info.plist */,
@@ -291,7 +288,6 @@
 			files = (
 				E683DFCF1CD3143F00835FFC /* LaunchScreen.storyboard in Resources */,
 				E683DFCC1CD3143F00835FFC /* Assets.xcassets in Resources */,
-				E683DFCA1CD3143F00835FFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,14 +476,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E683DFC81CD3143F00835FFC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E683DFC91CD3143F00835FFC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E683DFCD1CD3143F00835FFC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
