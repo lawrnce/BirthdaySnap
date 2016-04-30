@@ -128,8 +128,10 @@ class PhotosViewController: UIViewController {
      */
     private func setupNavigationBar() {
         self.navigationBar = UINavigationBar(frame: CGRectZero)
+        self.navigationBar.backgroundColor = UIColor.whiteColor()
+        self.navigationBar.translucent = false
         self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        self.navigationBar.topItem?.title = "Birthday Album"
+        self.navigationBar.items = [UINavigationItem(title: "Birthday Album")]
         self.view.addSubview(self.navigationBar)
     }
     
