@@ -28,6 +28,10 @@ class PhotosViewController: UIViewController {
     var collectionView: UICollectionView!
     var flowLayout: UICollectionViewFlowLayout!
     
+    // Strong reference to detail view controller.
+    // Present the detail view as a child of this view controller
+    var detailViewController: DetailViewController!
+    
     // Auto layout variables
     private var navigationBarHeightConstraint: NSLayoutConstraint!
     
@@ -81,8 +85,6 @@ class PhotosViewController: UIViewController {
                 // Reload collection view
                 self.collectionView.reloadData()
                 
-
-                
             // Network Error
             } else {
 
@@ -111,11 +113,6 @@ class PhotosViewController: UIViewController {
            refreshControl.endRefreshing()
         }
     }
-    
-    /**
-        MARK: - User Notifications
-     */
-    
     
     /**
         MARK: - Setup
@@ -174,6 +171,16 @@ class PhotosViewController: UIViewController {
     }
     
     /**
+        Init the detail view controller and make it a child of this view controller.
+     */
+    private func setupDetailViewController() {
+        self.detailViewController = DetailViewController()
+        if let parent = self.parentViewController {
+            parent.addChildViewController(self.detailViewController)
+        }
+    }
+    
+    /**
         MARK: - Auto Layout
     */
     
@@ -197,6 +204,17 @@ class PhotosViewController: UIViewController {
         let leadingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, bottomConstraint])
+    }
+    
+    /**
+        Layout detail child view.
+     */
+    private func layoutDetailChildView() {
+        let topLayout = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
+        let leadingConstraint = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
+        let trailingConstraint = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
+        let bottomConstraint = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, bottomConstraint])
     }
     
@@ -248,7 +266,40 @@ extension PhotosViewController: UICollectionViewDataSource {
 
 extension PhotosViewController: UICollectionViewDelegate {
     
+    /**
+        On selecting, lazy load a detail view controller and set it as a child view controller.
+     */
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if self.detailViewController == nil {
+            self.setupDetailViewController()
+        }
+        
+        // set data
+        self.detailViewController.photosURL = self.photosURL
+        self.detailViewController.initialIndexPath = indexPath
+        
+        // Prepare animation
+        self.detailViewController.view.alpha = 0.0
+        self.view.addSubview(self.detailViewController.view)
+        layoutDetailChildView()
+        self.willMoveToParentViewController(self.detailViewController)
+        
+        // Animate transition
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            
+            self.detailViewController.view.alpha
+            
+            }) { (done) -> Void in
+                
+        }
+        
         
     }
 }
+
+
+
+
+
+

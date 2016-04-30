@@ -32,10 +32,17 @@ let kPHOTO_LINE_SPACING = kPHOTO_CELL_SPACING * 2.0
 let kPHOTO_PORTRAIT_ITEM_SIZE = CGSize(width: kSCREEN_WIDTH / 3.0 - kPHOTO_CELL_SPACING, height: kSCREEN_WIDTH / 3.0 - kPHOTO_CELL_SPACING)
 let kPHOTO_LANDSCAPE_ITEM_SIZE = CGSize(width: kSCREEN_HEIGHT / 5.0 - kPHOTO_CELL_SPACING, height: kSCREEN_HEIGHT / 5.0 - kPHOTO_CELL_SPACING)
 
+/**
+    Detail collection view
+ */
+let kDETAIL_PORTRAIT_ITEM_SIZE = CGSize(width: kSCREEN_WIDTH, height: kSCREEN_HEIGHT - 44.0)
+let kDETAIL_LANDSCAPE_ITEM_SIZE = CGSize(width: kSCREEN_HEIGHT, height: kSCREEN_WIDTH - 44.0)
+
 /** 
-    Photos cell constants
+    Reuse constants
  */
 let kPhotosCellReuseIdentifier = "com.lawrnce.PhotosCellReuseIdentifier"
+let kDetailCellReuseIdentifier = "com.lawrnce.DetailCellReuseIdentifier"
 
 /**
     Autolayout constants

@@ -15,7 +15,7 @@ class Flickr {
     /**
         Calls the Flickr API with paramaters for birthday photos.
      
-        - Parameter competion: The block to execute after the HTTP call. This block returns a JSON or an error.
+        - Parameter competion: The block to be executed after the HTTP call. This block returns a JSON or an error.
      */
     func searchBirthdayPhotos(page: Int, completion:(json: JSON?, error: ErrorType?) -> Void) {
         
