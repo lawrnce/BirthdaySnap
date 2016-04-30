@@ -19,8 +19,8 @@ let apiSecret = "4f1469c14f2cf902"
 /**
     Global ui constants
  */
-let kSCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
-let kSCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
+let kSCREEN_WIDTH = UIScreen.mainScreen().fixedCoordinateSpace.bounds.size.width
+let kSCREEN_HEIGHT = UIScreen.mainScreen().fixedCoordinateSpace.bounds.size.height
 
 /**
     Collection view ui constants

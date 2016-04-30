@@ -129,6 +129,7 @@ class PhotosViewController: UIViewController {
     private func setupNavigationBar() {
         self.navigationBar = UINavigationBar(frame: CGRectZero)
         self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationBar.topItem?.title = "Birthday Album"
         self.view.addSubview(self.navigationBar)
     }
     
@@ -139,7 +140,12 @@ class PhotosViewController: UIViewController {
         self.flowLayout = UICollectionViewFlowLayout()
         self.flowLayout.minimumInteritemSpacing = kPHOTO_CELL_SPACING
         self.flowLayout.minimumLineSpacing = kPHOTO_LINE_SPACING
-        self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        if (orientation == .PortraitUpsideDown || orientation == .Portrait) {
+            self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
+        } else {
+            self.flowLayout.itemSize = kPHOTO_LANDSCAPE_ITEM_SIZE
+        }
     }
     
     /**
