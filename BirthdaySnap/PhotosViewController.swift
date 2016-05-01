@@ -115,12 +115,7 @@ class PhotosViewController: UIViewController {
         self.flowLayout = UICollectionViewFlowLayout()
         self.flowLayout.minimumInteritemSpacing = kPHOTO_CELL_SPACING
         self.flowLayout.minimumLineSpacing = kPHOTO_LINE_SPACING
-        let orientation = UIApplication.sharedApplication().statusBarOrientation
-        if (orientation == .PortraitUpsideDown || orientation == .Portrait) {
-            self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
-        } else {
-            self.flowLayout.itemSize = kPHOTO_LANDSCAPE_ITEM_SIZE
-        }
+        self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
     }
     
     /**
@@ -160,17 +155,6 @@ class PhotosViewController: UIViewController {
         let trailingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, bottomConstraint])
-    }
-    
-    /**
-        Adjust auto layout for orientation.
-     */
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        if (toInterfaceOrientation == .Portrait || toInterfaceOrientation == .PortraitUpsideDown) {
-            self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
-        } else {
-            self.flowLayout.itemSize = kPHOTO_LANDSCAPE_ITEM_SIZE
-        }
     }
 }
 

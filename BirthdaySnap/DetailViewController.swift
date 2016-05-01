@@ -66,12 +66,7 @@ class DetailViewController: UIViewController {
         self.flowLayout.scrollDirection = .Horizontal
         self.flowLayout.minimumInteritemSpacing = 0.0
         self.flowLayout.minimumLineSpacing = 0.0
-        let orientation = UIApplication.sharedApplication().statusBarOrientation
-        if (orientation == .PortraitUpsideDown || orientation == .Portrait) {
-            self.flowLayout.itemSize = kDETAIL_PORTRAIT_ITEM_SIZE
-        } else {
-            self.flowLayout.itemSize = kDETAIL_LANDSCAPE_ITEM_SIZE
-        }
+        self.flowLayout.itemSize = kDETAIL_PORTRAIT_ITEM_SIZE
     }
     
     /**
@@ -81,7 +76,6 @@ class DetailViewController: UIViewController {
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.dataSource = self
-        self.collectionView.delegate = self
         self.collectionView.backgroundColor = UIColor.blackColor()
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.showsVerticalScrollIndicator = false
@@ -135,16 +129,6 @@ extension DetailViewController: UICollectionViewDataSource {
     }
 }
 
-extension DetailViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension DetailViewController: UIScrollViewDelegate {
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        // Check orientation
-        let orientation = UIApplication.sharedApplication().statusBarOrientation
-        if (orientation == .PortraitUpsideDown || orientation == .Portrait) {
-            return kDETAIL_PORTRAIT_ITEM_SIZE
-        } else {
-            return kDETAIL_LANDSCAPE_ITEM_SIZE
-        }
-    }
 }

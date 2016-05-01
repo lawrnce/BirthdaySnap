@@ -11,6 +11,7 @@ import UIKit
 class PhotosCollectionViewCell: UICollectionViewCell {
  
     var imageView: UIImageView!
+    var activityIndicatorView: UIActivityIndicatorView!
 
     /**
         Setup the image view in the cell's frame.
@@ -32,13 +33,23 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         self.contentView.addConstraints([topLayout, bottomLayout, leadingLayout, trailingLayout])
     }
     
+    private func setupActivityIndicatorView() {
+        self.activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        self.activityIndicatorView.activityIndicatorViewStyle = .Gray
+        self.activityIndicatorView.center = self.contentView.center
+        self.contentView.addSubview(self.activityIndicatorView)
+        self.activityIndicatorView.startAnimating()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupActivityIndicatorView()
         setupImageView()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupActivityIndicatorView()
         setupImageView()
     }
     
