@@ -13,13 +13,11 @@ class DetailViewController: UIViewController {
     var photosURL: [NSURL]!
     var initialIndexPath: NSIndexPath!
     
-    var navigationBar: UINavigationBar!
     var collectionView: UICollectionView!
     var flowLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupFlowLayout()
         setupCollectionView()
 
@@ -28,7 +26,7 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionView.scrollToItemAtIndexPath(self.initialIndexPath, atScrollPosition: .None, animated: false)
+//        self.collectionView.scrollToItemAtIndexPath(self.initialIndexPath, atScrollPosition: .None, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,19 +37,6 @@ class DetailViewController: UIViewController {
     /**
         MARK: - Setup
      */
-     
-    /**
-        Use a navigation bar at the top. We do not use a navigation controller
-        because we will be handling navigation ourselves. The built in navigation
-        is inflexible.
-     */
-    private func setupNavigationBar() {
-        self.navigationBar = UINavigationBar(frame: CGRectZero)
-        self.navigationBar.backgroundColor = UIColor.whiteColor()
-        self.navigationBar.translucent = false
-        self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.navigationBar)
-    }
     
     /**
         Setup the flow layout.
@@ -88,24 +73,12 @@ class DetailViewController: UIViewController {
     /**
         MARK: - Auto Layout
      */
-     
-    /**
-        Layout navigation bar at top. We don't use a navigation controller because
-        we will handle navigation ourselves.
-     */
-    private func layoutNavigationBar() {
-        let topLayout = NSLayoutConstraint(item: self.navigationBar, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let leadingConstraint = NSLayoutConstraint(item: self.navigationBar, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-        let trailingConstraint = NSLayoutConstraint(item: self.navigationBar, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
-        let heightConstraint = NSLayoutConstraint(item: self.navigationBar, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: kNAV_BAR_LANDSCAPE_HEIGHT)
-        self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, heightConstraint])
-    }
     
     /**
         Layout collection view under navigation bar.
      */
     private func layoutCollectionView() {
-        let topLayout = NSLayoutConstraint(item: self.collectionView, attribute: .Top, relatedBy: .Equal, toItem: self.navigationBar, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        let topLayout = NSLayoutConstraint(item: self.collectionView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)

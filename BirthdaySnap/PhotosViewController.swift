@@ -24,27 +24,20 @@ class PhotosViewController: UIViewController {
     var cache: Cache<UIImage>!
     
     // Subview elements
-    var navigationBar: UINavigationBar!
     var collectionView: UICollectionView!
     var flowLayout: UICollectionViewFlowLayout!
-    
-    // Strong reference to detail view controller.
-    // Present the detail view as a child of this view controller
-    var detailViewController: DetailViewController!
     
     // Auto layout variables
     private var navigationBarHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupFlowLayout()
         setupCollectionView()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        layoutNavigationBar()
         layoutCollectionView()
         getBirthdayImagesForPage(1, completion: nil)
     }
@@ -119,20 +112,6 @@ class PhotosViewController: UIViewController {
      */
     
     /**
-        Use a navigation bar at the top. We do not use a navigation controller
-        because we will be handling navigation ourselves. The built in navigation
-        is inflexible.
-     */
-    private func setupNavigationBar() {
-        self.navigationBar = UINavigationBar(frame: CGRectZero)
-        self.navigationBar.backgroundColor = UIColor.whiteColor()
-        self.navigationBar.translucent = false
-        self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        self.navigationBar.items = [UINavigationItem(title: "Birthday Album")]
-        self.view.addSubview(self.navigationBar)
-    }
-    
-    /**
         Setup the flow layout.
      */
     private func setupFlowLayout() {
@@ -151,6 +130,7 @@ class PhotosViewController: UIViewController {
         The collection view were we preview photos.
      */
     private func setupCollectionView() {
+        self.title = "Birthday Album"
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.delegate = self
@@ -171,50 +151,17 @@ class PhotosViewController: UIViewController {
     }
     
     /**
-        Init the detail view controller and make it a child of this view controller.
-     */
-    private func setupDetailViewController() {
-        self.detailViewController = DetailViewController()
-        if let parent = self.parentViewController {
-            parent.addChildViewController(self.detailViewController)
-        }
-    }
-    
-    /**
         MARK: - Auto Layout
     */
-    
-    /**
-        Layout navigation bar at top. We don't use a navigation controller because
-        we will handle navigation ourselves.
-     */
-    private func layoutNavigationBar() {
-        let topLayout = NSLayoutConstraint(item: self.navigationBar, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let leadingConstraint = NSLayoutConstraint(item: self.navigationBar, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-        let trailingConstraint = NSLayoutConstraint(item: self.navigationBar, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
-        self.navigationBarHeightConstraint = NSLayoutConstraint(item: self.navigationBar, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: kNAV_BAR_PORTRAIT_HEIGHT)
-        self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, self.navigationBarHeightConstraint])
-    }
     
     /**
         Layout collection view under navigation bar.
      */
     private func layoutCollectionView() {
-        let topLayout = NSLayoutConstraint(item: self.collectionView, attribute: .Top, relatedBy: .Equal, toItem: self.navigationBar, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        let topLayout = NSLayoutConstraint(item: self.collectionView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
         let leadingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
         let trailingConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-        self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, bottomConstraint])
-    }
-    
-    /**
-        Layout detail child view.
-     */
-    private func layoutDetailChildView() {
-        let topLayout = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let leadingConstraint = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-        let trailingConstraint = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
-        let bottomConstraint = NSLayoutConstraint(item: self.detailViewController.view, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, bottomConstraint])
     }
     
@@ -223,14 +170,11 @@ class PhotosViewController: UIViewController {
      */
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         if (toInterfaceOrientation == .Portrait || toInterfaceOrientation == .PortraitUpsideDown) {
-            self.navigationBarHeightConstraint.constant = kNAV_BAR_PORTRAIT_HEIGHT
             self.flowLayout.itemSize = kPHOTO_PORTRAIT_ITEM_SIZE
         } else {
-            self.navigationBarHeightConstraint.constant = kNAV_BAR_LANDSCAPE_HEIGHT
             self.flowLayout.itemSize = kPHOTO_LANDSCAPE_ITEM_SIZE
         }
     }
-    
     
     /*
     // MARK: - Navigation
@@ -267,34 +211,11 @@ extension PhotosViewController: UICollectionViewDataSource {
 extension PhotosViewController: UICollectionViewDelegate {
     
     /**
-        On selecting, lazy load a detail view controller and set it as a child view controller.
+        Animate to detail view
      */
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if self.detailViewController == nil {
-            self.setupDetailViewController()
-        }
-        
-        // set data
-        self.detailViewController.photosURL = self.photosURL
-        self.detailViewController.initialIndexPath = indexPath
-        
-        // Prepare animation
-        self.detailViewController.view.alpha = 0.0
-        self.view.addSubview(self.detailViewController.view)
-        layoutDetailChildView()
-        self.willMoveToParentViewController(self.detailViewController)
-        
-        // Animate transition
-        UIView.animateWithDuration(1.0, animations: { () -> Void in
-            
-            self.detailViewController.view.alpha
-            
-            }) { (done) -> Void in
-                
-        }
-        
-        
+ 
     }
 }
 

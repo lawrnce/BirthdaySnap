@@ -13,6 +13,7 @@
 		E6184BC01CD3284000ECB8E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6184BBF1CD3284000ECB8E1 /* Constants.swift */; };
 		E61970001CD5667B007C0565 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6196FFF1CD5667B007C0565 /* DetailViewController.swift */; };
 		E61970021CD567E8007C0565 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61970011CD567E8007C0565 /* DetailCollectionViewCell.swift */; };
+		E61970041CD5A806007C0565 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61970031CD5A806007C0565 /* NavigationViewController.swift */; };
 		E655B0111CD3FAF600670740 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E655B0101CD3FAF600670740 /* PhotosViewController.swift */; };
 		E655B0131CD4073700670740 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E655B0121CD4073700670740 /* PhotosCollectionViewCell.swift */; };
 		E6833C39140ACC9E2A991CE8 /* Pods_BirthdaySnap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EAE3D0B5373E0CD7D8837D /* Pods_BirthdaySnap.framework */; };
@@ -56,6 +57,7 @@
 		E6184BBF1CD3284000ECB8E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E6196FFF1CD5667B007C0565 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E61970011CD567E8007C0565 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		E61970031CD5A806007C0565 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E655B0101CD3FAF600670740 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		E655B0121CD4073700670740 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		E683DFC11CD3143F00835FFC /* BirthdaySnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdaySnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 			children = (
 				E6184BBF1CD3284000ECB8E1 /* Constants.swift */,
 				E683DFC41CD3143F00835FFC /* AppDelegate.swift */,
+				E61970031CD5A806007C0565 /* NavigationViewController.swift */,
 				E655B0101CD3FAF600670740 /* PhotosViewController.swift */,
 				E655B0121CD4073700670740 /* PhotosCollectionViewCell.swift */,
 				E6196FFF1CD5667B007C0565 /* DetailViewController.swift */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61970041CD5A806007C0565 /* NavigationViewController.swift in Sources */,
 				E61970021CD567E8007C0565 /* DetailCollectionViewCell.swift in Sources */,
 				E6184BC01CD3284000ECB8E1 /* Constants.swift in Sources */,
 				E60DCFBF1CD316C800A28201 /* Flickr.swift in Sources */,
