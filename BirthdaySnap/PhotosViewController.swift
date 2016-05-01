@@ -20,9 +20,6 @@ class PhotosViewController: UIViewController {
     // The total number of pages of photos
     var totalPages: Int!
     
-    // The image cache to store the photos
-    var cache: Cache<UIImage>!
-    
     // Subview elements
     var collectionView: UICollectionView!
     var flowLayout: UICollectionViewFlowLayout!
@@ -34,12 +31,12 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         setupFlowLayout()
         setupCollectionView()
+        getBirthdayImagesForPage(1, completion: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         layoutCollectionView()
-        getBirthdayImagesForPage(1, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -175,16 +172,6 @@ class PhotosViewController: UIViewController {
             self.flowLayout.itemSize = kPHOTO_LANDSCAPE_ITEM_SIZE
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension PhotosViewController: UICollectionViewDataSource {
@@ -215,12 +202,12 @@ extension PhotosViewController: UICollectionViewDelegate {
      */
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
- 
+        // create detail view controller
+        let detailViewController = DetailViewController()
+        detailViewController.initialIndexPath = indexPath
+        detailViewController.photosURL = self.photosURL
+        
+        // push view controller
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
-
-
-
-
-
-

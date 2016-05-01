@@ -13,16 +13,22 @@ class NavigationViewController: UINavigationController {
     var photosViewController: PhotosViewController!
     var detailViewController: DetailViewController!
     
+    var navigationControllerDelegate: NavigationControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Init intial view controller
         self.photosViewController = PhotosViewController()
-        self.detailViewController = DetailViewController()
         self.viewControllers = [self.photosViewController]
+        
+        // Set delegate for animation
+        self.navigationControllerDelegate = NavigationControllerDelegate()
+        self.delegate = self.navigationControllerDelegate
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }

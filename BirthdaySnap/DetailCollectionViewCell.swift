@@ -39,6 +39,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
     private func setupImageView() {
         self.imageView = UIImageView(frame: self.bounds)
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.imageView.contentMode = .Center
         self.scrollView.addSubview(self.imageView)
         
         // Autolayout scroll view

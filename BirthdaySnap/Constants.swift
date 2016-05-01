@@ -35,7 +35,7 @@ let kPHOTO_LANDSCAPE_ITEM_SIZE = CGSize(width: kSCREEN_HEIGHT / 5.0 - kPHOTO_CEL
 /**
     Detail collection view
  */
-let kDETAIL_PORTRAIT_ITEM_SIZE = CGSize(width: kSCREEN_WIDTH, height: kSCREEN_HEIGHT - 44.0)
+let kDETAIL_PORTRAIT_ITEM_SIZE = CGSize(width: kSCREEN_WIDTH, height: kSCREEN_HEIGHT - 64.0)
 let kDETAIL_LANDSCAPE_ITEM_SIZE = CGSize(width: kSCREEN_HEIGHT, height: kSCREEN_WIDTH - 44.0)
 
 /** 
