@@ -82,6 +82,7 @@ class DetailViewController: UIViewController {
         self.collectionView.bounces = true
         self.collectionView.alwaysBounceVertical = false
         self.collectionView.pagingEnabled = true
+        self.collectionView.delaysContentTouches = true
         self.collectionView.registerClass(DetailCollectionViewCell.self, forCellWithReuseIdentifier: kDetailCellReuseIdentifier)
         self.view.addSubview(self.collectionView)
         self.collectionView.reloadData()
@@ -119,16 +120,9 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kDetailCellReuseIdentifier, forIndexPath: indexPath) as! DetailCollectionViewCell
         
-        // Set scroll delegate for zoom
-        cell.scrollView.delegate = self
-        
         // Use Haneke to fetch the photo and catch it
         cell.imageView.frame = cell.bounds
         cell.imageView.hnk_setImageFromURL(self.photosURL[indexPath.row])
         return cell
     }
-}
-
-extension DetailViewController: UIScrollViewDelegate {
-    
 }

@@ -41,7 +41,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
         self.imageView.contentMode = .ScaleAspectFit
         self.scrollView.addSubview(self.imageView)
-        
+    
         let centerHorizontalConstraint = NSLayoutConstraint(item: self.imageView, attribute: .CenterX, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         let centerVerticalConstraint = NSLayoutConstraint(item: self.imageView, attribute: .CenterY, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
         
@@ -64,3 +64,4 @@ class DetailCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+
