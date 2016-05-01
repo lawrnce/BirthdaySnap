@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
     var collectionView: UICollectionView!
     var flowLayout: UICollectionViewFlowLayout!
     
+    // Rotation 
+    private var contentOffsetAfterRotation: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFlowLayout()
@@ -104,20 +107,6 @@ class DetailViewController: UIViewController {
         let bottomConstraint = NSLayoutConstraint(item: self.collectionView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([topLayout, leadingConstraint, trailingConstraint, bottomConstraint])
     }
-    
-    /**
-        
-     */
-//    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-//        updateCollectionViewLayoutWithSize(size)
-//    }
-//    
-//    private func updateCollectionViewLayoutWithSize(size: CGSize) {
-//        self.flowLayout.itemSize = (size.width < size.height) ? kDETAIL_PORTRAIT_ITEM_SIZE : kDETAIL_LANDSCAPE_ITEM_SIZE
-//        self.flowLayout.invalidateLayout()
-//    }
-
 }
 
 extension DetailViewController: UICollectionViewDataSource {
@@ -146,20 +135,16 @@ extension DetailViewController: UICollectionViewDataSource {
     }
 }
 
-extension DetailViewController: UIScrollViewDelegate {
-    
-}
-
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        
-//        // Check orientation
-//        let orientation = UIApplication.sharedApplication().statusBarOrientation
-//        if (orientation == .PortraitUpsideDown || orientation == .Portrait) {
-//            return kDETAIL_PORTRAIT_ITEM_SIZE
-//        } else {
-//            return kDETAIL_LANDSCAPE_ITEM_SIZE
-//        }
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        // Check orientation
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        if (orientation == .PortraitUpsideDown || orientation == .Portrait) {
+            return kDETAIL_PORTRAIT_ITEM_SIZE
+        } else {
+            return kDETAIL_LANDSCAPE_ITEM_SIZE
+        }
+    }
 }
