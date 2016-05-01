@@ -174,7 +174,10 @@ extension PhotosViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kPhotosCellReuseIdentifier, forIndexPath: indexPath) as! PhotosCollectionViewCell
         // Use Haneke to fetch the photo and catch it
-        cell.imageView.hnk_setImageFromURL(self.photosURL[indexPath.row])
+        cell.imageView.hnk_setImageFromURL(self.photosURL[indexPath.row], placeholder: nil, format: nil, failure: nil) { (image) -> () in
+            cell.imageView.image = image
+            cell.activityIndicatorView.stopAnimating()
+        }
         return cell
     }
 }

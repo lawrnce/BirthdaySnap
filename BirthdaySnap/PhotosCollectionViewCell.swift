@@ -57,5 +57,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         if (self.imageView.image != nil) {
             self.imageView.image = nil
         }
+        self.activityIndicatorView.startAnimating()
     }
 }

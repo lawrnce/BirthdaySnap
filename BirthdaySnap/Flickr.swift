@@ -21,7 +21,7 @@ class Flickr {
         
         let params =    ["method": "flickr.photos.search",
             "api_key": apiKey,
-            "text": "birthday party",
+            "text": "bounce house",
             "per_page": "30",
             "page": page,
             "format": "json",
