@@ -39,6 +39,10 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     /**
         Called during animation to scroll to index.
      */
@@ -75,7 +79,7 @@ class DetailViewController: UIViewController {
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.backgroundColor = UIColor.whiteColor()
+        self.collectionView.backgroundColor = UIColor.blackColor()
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.bounces = true
@@ -138,7 +142,6 @@ extension DetailViewController: UICollectionViewDataSource {
         // Use Haneke to fetch the photo and catch it
         cell.imageView.frame = cell.bounds
         cell.imageView.hnk_setImageFromURL(self.photosURL[indexPath.row])
-        cell.imageView.center = cell.center
         return cell
     }
 }

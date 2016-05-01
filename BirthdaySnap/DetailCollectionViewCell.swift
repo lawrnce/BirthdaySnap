@@ -39,16 +39,13 @@ class DetailCollectionViewCell: UICollectionViewCell {
     private func setupImageView() {
         self.imageView = UIImageView(frame: self.bounds)
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageView.contentMode = .Center
+        self.imageView.contentMode = .ScaleAspectFit
         self.scrollView.addSubview(self.imageView)
         
-        // Autolayout scroll view
-        let topLayout = NSLayoutConstraint(item: self.imageView, attribute: .Top, relatedBy: .Equal, toItem: self.scrollView, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let bottomLayout = NSLayoutConstraint(item: self.imageView, attribute: .Bottom, relatedBy: .Equal, toItem: self.scrollView, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-        let leadingLayout = NSLayoutConstraint(item: self.imageView, attribute: .Leading, relatedBy: .Equal, toItem: self.scrollView, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-        let trailingLayout = NSLayoutConstraint(item: self.imageView, attribute: .Trailing, relatedBy: .Equal, toItem: self.scrollView, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
+        let centerHorizontalConstraint = NSLayoutConstraint(item: self.imageView, attribute: .CenterX, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
+        let centerVerticalConstraint = NSLayoutConstraint(item: self.imageView, attribute: .CenterY, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
         
-        self.scrollView.addConstraints([topLayout, bottomLayout, leadingLayout, trailingLayout])
+        self.contentView.addConstraints([centerHorizontalConstraint, centerVerticalConstraint])
     }
     
     override init(frame: CGRect) {
